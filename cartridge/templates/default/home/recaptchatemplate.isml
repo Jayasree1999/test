@@ -1,0 +1,62 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/homePage.css');
+    </isscript>
+    <script src="${pdict.recaptcha.googRecaptchaScript}"> </script>
+    <script>
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1> Form </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <form action="${pdict.actionUrl}" method="POST" class="submitform">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">${pdict.form.fname.label}</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Name" <isprint value="${pdict.form.fname.attributes}" encoding="off" />>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">${pdict.form.lname.label}</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter LastName" <isprint value="${pdict.form.lname.attributes}" encoding="off" />>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">${pdict.form.email.label}</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Gmail" <isprint value="${pdict.form.email.attributes}" encoding="off" />>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+                <div class="g-recaptcha" data-sitekey="${pdict.recaptcha.googleSitekey}" data-callback="correctCaptcha">
+                </div>
+                <button class="btn btn-primary mt-4" id="mybutton" disabled>Submit</button>
+                <div id="robot"> </div>
+            </form>
+        </div>
+    </div>
+    <script>
+var correctCaptcha = function(response) {
+        alert(response);
+         if (response == "" || response == undefined || response.length == 0)
+         {
+            document.getElementById("mybutton").innerHTML= "You are Robot :cry:";
+         }else{
+                     document.getElementById("mybutton").disabled = false;
+         }
+    };
+    </script> 
+    <iscomment> res.render('/js/google', {
+            google : google,
+        });
+        next(); </iscomment>
+</isdecorate>

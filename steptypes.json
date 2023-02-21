@@ -1,0 +1,43 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.notify",
+                "@supports-parallel-execution": "false",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "This script downloads the customer data",
+                "module": "app_custom_assignment2/cartridge/scripts/steps/notifyCustomer.js",
+                "function": "notify",
+                "transactional": "true",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "CustomObjectType",
+                            "@type": "string",
+                            "@required": "true",
+                            "description": "The custom object type is sent to an email when product comes to instock"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+Hello dear customer, your wishlist product is in stock now,
+click here to buy. !!!
+</br>
+<a href="${URLUtils.http('Product-Show', 'pid', param.pid)}">
+    ${Resource.msg('button.shopnow', 'forms', null)}</a>

@@ -1,0 +1,9 @@
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+<field 
+    formid="email" 
+    label="label.input.email.customForm" 
+    mandatory="true" 
+    max-length="50" 
+    regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" 
+    type="string"/>
+</form>

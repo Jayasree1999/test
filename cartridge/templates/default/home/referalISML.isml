@@ -1,0 +1,8 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/homePage.css');
+    </isscript>
+<h1> Thanks for your  Refering. You will receive email Shortly </h1>
+<div id="coupon_code"> </div>
+</isdecorate>

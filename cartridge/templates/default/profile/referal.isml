@@ -1,0 +1,31 @@
+<isdecorate template="common/layout/page">
+<isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/homePage.css');
+    </isscript>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1> Refer and Earn ! Us</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+    <div class = "container">
+        <form action="${URLUtils.url('ReferFriend-sendemail')}" method="POST" class="submitform">
+            <div class="form-group">
+                <label for="exampleInputEmail1">${pdict.form.email.label}</label>
+                <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                      <isprint value="${pdict.form.email.attributes}"
+                    encoding="off" />
+                <div class="invalid-feedback">
+                </div>
+            </div>
+            <button type="submit" class="btn invite-btn btn-primary" data-href="${URLUtils.url('ReferFriend-sendemail')}">Invite</button>
+        </form>
+        <div class="print_text"> </div>
+    </div>
+    </div>
+</div>
+</isdecorate>
